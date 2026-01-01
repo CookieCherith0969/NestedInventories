@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xug3nvl0l8j"
-path="res://.godot/imported/ni_item_icon.svg-790207483a7c4dfe9ad528b01d01c769.ctex"
+uid="uid://cblgs1gxvqjgf"
+path="res://.godot/imported/ni_inventory_icon.svg-37b1ac2729437ce7f4a636dc187db50b.ctex"
 metadata={
+"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/nested_inventories/ni_item_icon.svg"
-dest_files=["res://.godot/imported/ni_item_icon.svg-790207483a7c4dfe9ad528b01d01c769.ctex"]
+source_file="res://addons/nested_inventories/icons/ni_inventory_icon.svg"
+dest_files=["res://.godot/imported/ni_inventory_icon.svg-37b1ac2729437ce7f4a636dc187db50b.ctex"]
 
 [params]
 
@@ -39,5 +40,5 @@ process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
 svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
+editor/scale_with_editor_scale=true
+editor/convert_colors_with_editor_theme=true

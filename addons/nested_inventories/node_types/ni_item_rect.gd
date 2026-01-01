@@ -1,9 +1,9 @@
 @tool
-@icon("res://addons/nested_inventories/ni_item_rect.svg")
+@icon("res://addons/nested_inventories/icons/ni_item_rect.svg")
 class_name NIItemRect
 extends Control
 
-const quantity_label_scene: PackedScene = preload("res://addons/nested_inventories/item_quantity_label.tscn")
+const quantity_label_scene: PackedScene = preload("res://addons/nested_inventories/assets/item_quantity_label.tscn")
 
 @export
 var connected_item: NIItem:
@@ -93,6 +93,7 @@ func update_texture_rects() -> void:
 			texture_slice.region.position = Vector2(slot_pos)*connected_item.slot_size + connected_item.sprite_offset
 			texture_slice.region.size = connected_item.slot_size
 			item_texture.texture = texture_slice
+			item_texture.tooltip_text = connected_item.display_name
 			if slot_pos in touch_slots:
 				item_texture.mouse_filter = Control.MOUSE_FILTER_PASS
 			else:
@@ -138,7 +139,7 @@ func _texture_gui_input(event: InputEvent, slot: Vector2i) -> void:
 					queue_free()
 					accept_event()
 					return
-				if Input.is_action_pressed("TakeHalfItem"):
+				if Input.is_action_pressed("NITakeHalfItem"):
 					# Only half the stack is picked up
 					var half_item: NIItem = connected_item.get_duplicate()
 					@warning_ignore("integer_division")
@@ -150,7 +151,7 @@ func _texture_gui_input(event: InputEvent, slot: Vector2i) -> void:
 					NI_HeldItemManager.pick_up_item(half_item,get_parent(),slot,grab_offset)
 					accept_event()
 					return
-				if Input.is_action_pressed("TakeOneItem"):
+				if Input.is_action_pressed("NITakeOneItem"):
 					# Only one item is picked up from the stack
 					var one_item: NIItem = connected_item.get_duplicate()
 					one_item.quantity = 1

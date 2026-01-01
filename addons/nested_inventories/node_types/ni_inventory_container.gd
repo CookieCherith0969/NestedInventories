@@ -1,11 +1,11 @@
 @tool
-@icon("res://addons/nested_inventories/ni_inventory_container_icon.svg")
+@icon("res://addons/nested_inventories/icons/ni_inventory_container_icon.svg")
 class_name NIInventoryContainer
 extends PanelContainer
 
 enum TitleBarMode {DRAG_AND_CLOSE,CLOSE,DRAG,ONLY_TITLE,NO_BAR}
 
-const grid_default_theme: Theme = preload("res://addons/nested_inventories/inventory_grid_theme.tres")
+const grid_default_theme: Theme = preload("res://addons/nested_inventories/assets/inventory_grid_theme.tres")
 
 @export
 var connected_inventory: NIInventory:
@@ -73,7 +73,7 @@ func _ready() -> void:
 		assert(NI_HeldItemManager,"Nested Inventories: Missing Autoload! Remember to enable the plugin in the Project Settings")
 	
 	if !theme:
-		theme = preload("res://addons/nested_inventories/default_inventory_theme.tres").duplicate(true)
+		theme = preload("res://addons/nested_inventories/assets/default_inventory_theme.tres").duplicate(true)
 	# Group is used for closing/moving inventory containers displaying an item's nested inventory
 	if !is_in_group("NIInventoryContainers"):
 		add_to_group("NIInventoryContainers",true)
@@ -161,7 +161,7 @@ func _property_can_revert(property: StringName) -> bool:
 
 func _property_get_revert(property: StringName) -> Variant:
 	if property == "theme":
-		return preload("res://addons/nested_inventories/default_inventory_theme.tres").duplicate(true)
+		return preload("res://addons/nested_inventories/assets/default_inventory_theme.tres").duplicate(true)
 	return null
 
 

@@ -22,6 +22,29 @@ var grab_offset: Vector2
 @onready var quantity_label: Label = $ItemQuantityLabel
 
 
+func _enter_tree() -> void:
+	if !InputMap.has_action("NIRotateItemCCW"):
+		InputMap.add_action("NIRotateItemCCW")
+		var input_event: InputEventKey = InputEventKey.new()
+		input_event.physical_keycode = KEY_Q
+		InputMap.action_add_event("NIRotateItemCCW",input_event)
+	if !InputMap.has_action("NIRotateItemCW"):
+		InputMap.add_action("NIRotateItemCW")
+		var input_event: InputEventKey = InputEventKey.new()
+		input_event.physical_keycode = KEY_E
+		InputMap.action_add_event("NIRotateItemCW",input_event)
+	if !InputMap.has_action("NITakeHalfItem"):
+		InputMap.add_action("NITakeHalfItem")
+		var input_event: InputEventKey = InputEventKey.new()
+		input_event.physical_keycode = KEY_SHIFT
+		InputMap.action_add_event("NITakeHalfItem",input_event)
+	if !InputMap.has_action("NITakeOneItem"):
+		InputMap.add_action("NITakeOneItem")
+		var input_event: InputEventKey = InputEventKey.new()
+		input_event.physical_keycode = KEY_CTRL
+		InputMap.action_add_event("NITakeOneItem",input_event)
+
+
 func _process(_delta: float) -> void:
 	if held_item:
 		held_item_texture.global_position = get_viewport().get_mouse_position()
@@ -45,6 +68,17 @@ func _process(_delta: float) -> void:
 		quantity_label.hide()
 
 
+func _exit_tree() -> void:
+	if InputMap.has_action("NIRotateItemCCW"):
+		InputMap.erase_action("NIRotateItemCCW")
+	if InputMap.has_action("NIRotateItemCW"):
+		InputMap.erase_action("NIRotateItemCW")
+	if InputMap.has_action("NITakeHalfItem"):
+		InputMap.erase_action("NITakeHalfItem")
+	if InputMap.has_action("NITakeOneItem"):
+		InputMap.erase_action("NITakeOneItem")
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if !held_item:
 		return
@@ -54,9 +88,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			if ~event.button_mask & MOUSE_BUTTON_MASK_LEFT:
 				# Mouse released while holding item
 				drop_item_at_cursor()
-		elif event.is_action_pressed("RotateItemCW"):
+		elif event.is_action_pressed("NIRotateItemCW"):
 			rotate_held_item(1)
-		elif event.is_action_pressed("RotateItemCCW"):
+		elif event.is_action_pressed("NIRotateItemCCW"):
 			rotate_held_item(-1)
 
 

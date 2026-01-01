@@ -3,7 +3,7 @@ class_name NestedInventories
 extends EditorPlugin
 
 const AUTOLOAD_NAME: String = "NIHeldItemManager"
-const AUTOLOAD_PATH: String = "res://addons/nested_inventories/ni_held_item_manager.tscn"
+const AUTOLOAD_PATH: String = "res://addons/nested_inventories/autoloads/ni_held_item_manager.tscn"
 
 
 # Used by some scripts in the plugin when handling rotated items

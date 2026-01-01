@@ -5,6 +5,7 @@ offset_right = 19.0
 offset_bottom = 23.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_constants/outline_size = 4
 text = "aa"
 horizontal_alignment = 2
 vertical_alignment = 2

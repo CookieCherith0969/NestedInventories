@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b12i7y2vvfab5"]
 
-[ext_resource type="Script" uid="uid://dst6xp26nnggf" path="res://addons/nested_inventories/ni_held_item_manager.gd" id="1_etd3i"]
-[ext_resource type="PackedScene" uid="uid://bjjcw062b2ugb" path="res://addons/nested_inventories/item_quantity_label.tscn" id="2_42ry7"]
+[ext_resource type="Script" uid="uid://dst6xp26nnggf" path="res://addons/nested_inventories/autoloads/ni_held_item_manager.gd" id="1_etd3i"]
+[ext_resource type="PackedScene" uid="uid://bjjcw062b2ugb" path="res://addons/nested_inventories/assets/item_quantity_label.tscn" id="2_42ry7"]
 
 [node name="HeldItemManager" type="CanvasLayer"]
 layer = 2

@@ -1,5 +1,5 @@
 @tool
-@icon("res://addons/nested_inventories/ni_inventory_icon.svg")
+@icon("res://addons/nested_inventories/icons/ni_inventory_icon.svg")
 class_name NIInventory
 extends Resource
 
