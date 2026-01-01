@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b12i7y2vvfab5"]
+
+[ext_resource type="Script" uid="uid://dst6xp26nnggf" path="res://addons/nested_inventories/ni_held_item_manager.gd" id="1_etd3i"]
+[ext_resource type="PackedScene" uid="uid://bjjcw062b2ugb" path="res://addons/nested_inventories/item_quantity_label.tscn" id="2_42ry7"]
+
+[node name="HeldItemManager" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_etd3i")
+
+[node name="HeldItemTexture" type="TextureRect" parent="."]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="ItemQuantityLabel" parent="." instance=ExtResource("2_42ry7")]
